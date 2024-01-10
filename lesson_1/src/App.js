@@ -1,27 +1,23 @@
-import logo from './logo.svg';
+import logo from "./logo.svg";
 import './App.css';
 
-let text = "Hello world!";
+let toggle = true;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  if(toggle)
+    return(
+      <div>True</div>
+    )
+  else return(
+    <div><Page404/></div>
+  )
+    
+}
+
+function Page404(){
+  return(
+    <div>Error 404 not found</div>
+  )
 }
 
 export default App;
