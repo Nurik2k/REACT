@@ -1,23 +1,30 @@
-import logo from "./logo.svg";
-import './App.css';
+import React from "react";
 
-let toggle = true;
+class App extends React.Component{
+  
+  names = ["Nurik", "Asir", "Marston", "Rat Micah"]
 
-function App() {
-  if(toggle)
-    return(
-      <div>True</div>
+  render(){
+    return (
+      <div>
+        {
+          this.names.map(value => {
+            return(
+              <Comp name={value}/>
+            )
+          })
+        }
+      </div>
     )
-  else return(
-    <div><Page404/></div>
-  )
-    
+  }
 }
 
-function Page404(){
-  return(
-    <div>Error 404 not found</div>
-  )
+class Comp extends React.Component {
+  render() {
+    return(
+      <div>This is new component! Hello, {this.props.name}</div>  
+    )
+  }
 }
 
 export default App;
