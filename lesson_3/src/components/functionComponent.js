@@ -21,10 +21,10 @@ const FunctionCompon = () =>{
             {name} */}
 
             <input onChange={(event) => setUser({user: event.target.value})}></input>
-            <button onClick={console.log(users)}>+</button>
+            <button onClick={() => console.log(users)}>+</button>
 
             <input onChange={(event) => setUser({name: event.target.value})}></input>
-            <button onClick={console.log(users)}>+</button>
+            <button onClick={()=> console.log(users)}>+</button>
         </div>
     )
 }
