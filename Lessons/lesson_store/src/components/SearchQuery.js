@@ -6,7 +6,10 @@ export default function SearchQuery(props){
     <>
     { props.items.map(item =>{
         if(item.name.toLowerCase().includes(props.searchName.toLowerCase())){
-            return(<ItemCard item={item}/>)
+            return(<ItemCard 
+                item={item}
+                addItemToCart={props.addItemToCart} 
+            />)
         }
     }) }
     </>

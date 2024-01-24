@@ -1,10 +1,12 @@
 import './App.css';
 import React, { useState } from 'react';
-import SearchQuery from './components/SearchQuery';
+import SearchQuery from "./components/SearchQuery"
+import Header from "./components/Header";
 
 function App() {
   
-  let [searchName, setSearchName] = useState("")//input
+  let [searchName, setSearchName] = useState("") //input
+  let[cart, setCart] = useState([]) //корзина
 
   let items = [
     {
@@ -23,15 +25,28 @@ function App() {
       "img": "https://static.tildacdn.com/tild6163-3337-4434-b035-653033623363/image.png"
     },
   ]
+
+  let addItemToCart = (item) =>{
+        setCart([...cart, item])
+        console.log(cart)
+  }
  
   return (
     <div className='App'>
-      <input onInput={(event) => setSearchName(event.target.value)} value={searchName}></input>
-      <SearchQuery
-       items={items} 
-       searchName={searchName}/>
+      <Header 
+      searchName={searchName}
+      setSearchName={setSearchName}
+      cart={cart}
+      setCart={setCart}
+      />
+      <SearchQuery 
+        items={items} // товары
+        searchName={searchName} // ввод с input
+        addItemToCart={addItemToCart}
+      />
+
     </div>
-  );
+  )
 }
 
 export default App;
