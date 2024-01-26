@@ -1,14 +1,18 @@
 import Cart from "./Cart";
+import { Link } from "react-router-dom";
 
 const Header = ({ ...props }) => {
     return (
-        <div className="Header">
-            <div className="Container">
-                <div/>
-                <input 
+        <div className="navbar bg-body-tertiary">
+            <div className="container-fluid">
+                <div className="d-flex">
+                    <Link className="btn form-control me-2" to="/">Главная</Link>
+                    <Link className="btn form-control me-2" to="/smartphones">Смартфоны</Link>
+                </div>
+                <input
                     onInput={
-                    (event) => 
-                        props.setSearchName(event.target.value)
+                        (event) =>
+                            props.setSearchName(event.target.value)
                     }
                     value={props.searchName}>
                 </input>

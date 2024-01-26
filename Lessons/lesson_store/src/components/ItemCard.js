@@ -1,12 +1,19 @@
-import React from "react";
+export default function ItemCard(props) {
 
-export default function ItemCard(props){
-    return(
-        <div className="Card">
-            <h3>{props.item.name}</h3>
-            <img src={props.item.img} alt=""></img>
-            <p>{props.item.desc}</p>
-            <button onClick={() => props.addItemToCart(props.item)}>В корзину</button>
+    return (
+        <div className="card mb-3">
+            <div className="row g-0">
+                <div className="col-md-4">
+                <img  src={props.item.img} className="img-fluid rounded-start" alt="..."></img>
+                </div>
+                <div className="col-md-8">
+                <div className="card-body">
+                    <h5 className="card-title">{props.item.name}</h5>
+                    <p className="card-text">{props.item.desc}</p>
+                    <button className="btn btn-primary" onClick={() => props.addItemToCart(props.item)}>В корзину</button>
+                </div>
+                </div>
+            </div>
         </div>
     )
 }
