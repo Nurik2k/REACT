@@ -1,12 +1,8 @@
 //Типы action
-export const INCREMENT = 'INCREMENT';
-export const DECREMENT = 'DECREMENT';
+export const SET_IMAGE = 'SET_IMAGE';
 
 // Создаем actions
-export const increment = () => ({
-    type: INCREMENT
-})
-
-export const decrement = () => ({
-    type: DECREMENT
+export const setImage = (image_url) => ({
+    type: SET_IMAGE,
+    payload: image_url
 })

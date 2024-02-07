@@ -1,20 +1,16 @@
-import { INCREMENT, DECREMENT } from "./actions";
+import { SET_IMAGE } from "./actions";
 
 const initialState = {
-    count: 0
+    image: ''
 }
 
-const counterReducer = (state = initialState, action) => {
+const imageReducer = (state = initialState, action) => {
     switch (action.type) {
-        case INCREMENT:
-            return { ...state, count: state.count + 1 };
-        case DECREMENT:
-            return { ...state, count: state.count - 1 };
-        // case ADD_IMAGE:
-        //     return { ...state, image: }
+        case SET_IMAGE:
+            return { ...state, image: action.payload };
         default:
             return state;
     }
 }
 
-export default counterReducer;
+export default imageReducer;

@@ -1,19 +1,17 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './App.css';
-import { increment, decrement } from './redux/actions';
 import Data from './components/Data';
 
 function App() {
 
   // Вытягиваем из хранилища state.count
-  const count = useSelector(state => state.count)
-  const dispatch = useDispatch();
+  const image_url = useSelector(state => state.image)
 
   return (
     <div className="App">
-      <button onClick={() => { dispatch(increment()) }}>+</button>
-      <Data/>
-      <button onClick={() => { dispatch(decrement()) }}>-</button>
+      <Data />
+      <br></br>
+      <img src={image_url}></img>
     </div>
   );
 }
