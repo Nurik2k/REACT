@@ -4,16 +4,13 @@ import Data from './components/Data';
 
 function App() {
 
-  // Вытягиваем из хранилища state.count
-  const users = useSelector(state => state.users)
+  const image_url = useSelector(state=> state.image.image)
 
   return (
     <div className="App">
-      <Data />
+      <Data/>
       <br></br>
-      {users.map(user=>(
-        <li>user.name</li>
-      ))}
+      <img src={image_url}></img>
     </div>
   );
 }
