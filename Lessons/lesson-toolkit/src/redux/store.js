@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import imgaeSlice from "./imgaeSlice";
-import circleSlice from "./circleSlice";
+import moneySlice from "./moneySlice";
 
 const store = configureStore({
     reducer: {
-        image: imgaeSlice,
-        circle: circleSlice, 
+        money: moneySlice
     }
 });
 
